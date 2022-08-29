@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="0.149">
+    <testcase classname="Authentication to e-shop" name="Authentication - positive flow" time="0.02">
+        <system-out><![CDATA[Given Homepage is opened....................................................passed
+And User "test@test.pl" is registered.......................................passed
+When I click Sign in link in top right menu.................................passed
+And I provide login "test@test.pl"..........................................passed
+And I provide password "123qwerty"..........................................passed
+And I click green sign in button............................................passed
+Then I see page for authenticated user......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Authentication to e-shop" name="Empty login and password form - negative flow" time="0.002">
+        <system-out><![CDATA[Given Homepage is opened....................................................passed
+When I click Sign in link in top right menu.................................passed
+And I click green sign in button............................................passed
+Then I see error message "An email address is required".....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Authentication to e-shop" name="Invalid email address - negative flow" time="0.002">
+        <system-out><![CDATA[Given Homepage is opened....................................................passed
+When I click Sign in link in top right menu.................................passed
+And I provide login "tes123"................................................passed
+And I provide password "123qwerty"..........................................passed
+And I click green sign in button............................................passed
+Then I see error message "Invalid email address"............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Authentication to e-shop" name="Empty password - negative flow" time="0.002">
+        <system-out><![CDATA[Given Homepage is opened....................................................passed
+When I click Sign in link in top right menu.................................passed
+And I provide login "tes@gmail.com".........................................passed
+And I click green sign in button............................................passed
+Then I see error message "Password is required."............................passed
+]]></system-out>
+    </testcase>
+</testsuite>
